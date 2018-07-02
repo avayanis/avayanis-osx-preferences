@@ -7,7 +7,7 @@ export ZSH=/Users/ombotcfg/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="xxf"
+ZSH_THEME="refined"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_THEME="xxf"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew httpie jsontools node npm osx)
+plugins=(git brew httpie jsontools node npm osx web-search aws osx per-directory-history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,6 +84,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Export go path
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Setup google cloud platform (gcloud)
+source $HOME/Projects/google-cloud-sdk/completion.zsh.inc
+source $HOME/Projects/google-cloud-sdk/path.zsh.inc
+
+# Export nvm path
 export NVM_DIR="/Users/ombotcfg/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
